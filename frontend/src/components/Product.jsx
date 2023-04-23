@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useMatches, useNavigate, useParams } from 'react-router-dom'
 
-const VALID_PRODUCTS = ["jbl","sony","bose"]
+const VALID_PRODUCTS = ["bose","jbl","sony"]
 
 const isValidProduct = (product) => {
     for (let prod = 0;prod < VALID_PRODUCTS.length;prod++){
