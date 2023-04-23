@@ -7,7 +7,7 @@ export const getReviews = async (product,aspect,sentiment) => {
         return await axios
             .get(`${URL}reviews/${product}/${aspect}/${sentiment}`)
             .then((response) => {
-                console.log(response)
+                //console.log(response)
                 return response;
             })
             .catch((error) => console.log(error));

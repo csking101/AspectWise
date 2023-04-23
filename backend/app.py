@@ -1,10 +1,14 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import json
 import os
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/reviews/<string:product>/<string:aspect>/<string:sentiment>', methods=['GET'])
+@cross_origin()
 def get_reviews(product,aspect,sentiment):
     with open(os.path.abspath(f"./backend/datasets/speakers/{product.lower()}/{aspect.lower()}/{sentiment.lower()}.json"),'r') as f:
         json_string = f.read()
