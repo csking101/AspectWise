@@ -6,6 +6,11 @@ import os
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+PRODUCTS = []
+
+def generate_products():
+    global PRODUCTS
+    PRODUCTS = [ f.name for f in os.scandir(os.path.abspath(f"./backend/datasets/speakers/")) if f.is_dir()]
 
 @app.route('/reviews/<string:product>/<string:aspect>/<string:sentiment>', methods=['GET'])
 @cross_origin()
@@ -15,10 +20,16 @@ def get_reviews(product,aspect,sentiment):
 
         return json_string
 
+@app.route('/products', methods=['GET'])
+@cross_origin()
+def get_products():
+    return jsonify(PRODUCTS)
+
 
 
 # Run the application
 if __name__ == '__main__':
+    generate_products()
     app.run(debug=True)
 
 '''

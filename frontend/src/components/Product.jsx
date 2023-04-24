@@ -38,9 +38,10 @@ const Product = () => {
 
     useEffect(() => {
         if (!isValidProduct(product)) navigate("/")
-    })
+    },[])
 
     useEffect(() => {
+        if (isValidProduct(product)){
         setReviews({"bass":[],"build":[],"price":[]})
         console.log(reviews)
         console.log("Change in product")
@@ -56,7 +57,7 @@ const Product = () => {
                             }))
                             console.log(tempObj)
                         })
-        }
+        }}
     },[product])
 
 
