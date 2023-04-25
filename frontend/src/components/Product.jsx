@@ -64,6 +64,9 @@ const Product = () => {
   return (
     <div>
         <h1>{product}</h1>
+        <img src={require("../resources/images/"+product+"1.jpg")}
+                        alt="logo"
+                  />
         {ASPECTS.map((aspect,idx) => {
             return (
                 <div>
