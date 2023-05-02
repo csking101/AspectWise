@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useMatches, useNavigate, useParams } from 'react-router-dom'
 import { getReviews } from '../service/productApi'
+import NavBar from './NavBar'
 
 const PRODUCTS = ["bose","jbl","sony"]
 const ASPECTS = ["bass","build","price"]
@@ -66,6 +67,7 @@ const Product = () => {
 
   return (
     <div>
+        <NavBar></NavBar>
         <h1>{product}</h1>
         {imgUrl?
         <img src={require("../resources/images/"+product+"1.jpg")}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getProducts } from '../service/productApi'
+import NavBar from './NavBar'
 
 const ProductsList = () => {
   const [products,setProducts] = useState([])
@@ -15,6 +16,7 @@ const ProductsList = () => {
 
   return (
     <div>
+      <NavBar></NavBar>
       <h1>List of Products</h1>
       {products.length?
       products.map((product) => {

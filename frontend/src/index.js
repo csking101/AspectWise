@@ -11,11 +11,13 @@ import ProductsList from './components/ProductsList';
 import Product from './components/Product';
 import NotFound from './components/NotFound';
 import './index.css';
+import NavBar from './components/NavBar';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route path="" element={<Home />} />
+      <Route path="home" element={<Home />} />
       <Route path="products" element={<ProductsList />} />
       <Route path="product/:product" element={<Product />} />
     </Route>
