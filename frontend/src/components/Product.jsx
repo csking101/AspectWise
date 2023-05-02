@@ -35,9 +35,12 @@ const Product = () => {
     const navigate = useNavigate();
 
     const [reviews,setReviews] = useState({"bass":[],"build":[],"price":[]})
+    const [imgUrl,setImgUrl] = useState("")
 
     useEffect(() => {
         if (!isValidProduct(product)) navigate("/")
+
+        setImgUrl("../resources/images/"+product+"1.jpg")
     },[])
 
     useEffect(() => {
@@ -64,9 +67,15 @@ const Product = () => {
   return (
     <div>
         <h1>{product}</h1>
+        {imgUrl?
         <img src={require("../resources/images/"+product+"1.jpg")}
                         alt="logo"
-                  />
+                        onerror={() => {
+                                alert('invalid img')
+                            }
+                        }
+                  /> : null
+        }
         {ASPECTS.map((aspect,idx) => {
             return (
                 <div>
@@ -78,7 +87,7 @@ const Product = () => {
                         </tr>
                         {reviews[aspect].map((review,idx) => {
                             return (<tr>
-                                <td>{idx}</td>
+                                <td>{idx+1}</td>
                                 <td>{review}</td>
                             </tr>)
                         })}
