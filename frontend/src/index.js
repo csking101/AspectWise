@@ -13,6 +13,7 @@ import NotFound from './components/NotFound';
 import './index.css';
 import NavBar from './components/NavBar';
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">

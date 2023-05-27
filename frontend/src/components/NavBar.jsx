@@ -9,17 +9,22 @@ const NavBarItem = styled('div')`
   padding: 3vh;
   margin: 0vh;
   text-align: center;
+  background-color: #8B1874;
 `;
 
 const NavBarDiv = styled(Paper)`
-
+  background-color: #8B1874;
   elevation: 10;
   position: sticky;
   display: flex;
   direction: horizontal;
+  color: #2CD3E1;
 `;
 
 const NavBarItemText = styled(Typography)`
+  background-color: #8B1874;
+  color: #2CD3E1;
+  text-decoration: none;
   
 `;
 

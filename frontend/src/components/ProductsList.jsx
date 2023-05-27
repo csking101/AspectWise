@@ -17,19 +17,23 @@ const ProductsList = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <h1>List of Products</h1>
+      <center><h1 style={{ color:'#B71375'}}>List of Products</h1></center>
+      <div style={{ display:'flex',justifyContent:'space-around',margin:'4vh' }}>
       {products.length?
       products.map((product) => {
-        return (<div>
-                  <Link to={"/product/"+product}>
-                  <h2>{product}</h2>
+        return (<div style={{ }}>
+                  <Link to={"/product/"+product} style={{ textDecoration:'none',color:"#FC4F00" }}>
+                  <center><h2>{product.toUpperCase()}</h2></center>
                   <img src={require("../resources/images/"+product+"1.jpg")}
                         alt="logo"
+                        height={300}
+                        width={300}
                   />
                   </Link>
                 </div>
         )
       }) :<p>LOADING</p> }
+      </div>
     </div>
   )
 }
