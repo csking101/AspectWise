@@ -83,6 +83,14 @@ We chose the headphone industry, targeting three brands Bose, JBL and Sony. The 
     
 -   Also we have all the reviews we used to train our model under each target specified in the webpage.
 
+### Deployed model using Streamlit  
+-   The Streamlit app is mostly similar to the web app. It consists of a LIVE demo of the working model.
+-   The review is to be written in the Text Box provided and the model will give back the Target and aspect identified along with the sentiment with respect to the Target-Aspect pair.
+-   The model Home page explains about the data preparation, modelling and experiments.
+-   Also there is a Dataset section which has sample dataset used for each target during training.
+
+-   Model Link : https://aspectwise-exfqypj96el.streamlit.app/
+
 ![Product](product.png)
 
 ## Conclusion
