@@ -169,7 +169,7 @@ if rad == 'LIVE':
         resp_token = tokenizer([user_input], truncation=True, return_tensors = 'tf')
         custom_test = tf.data.Dataset.from_tensor_slices((dict(resp_token), [0]))
         preds = model.predict(custom_test)
-        st.write(preds)
+        # st.write(preds)
         prediction = tf.argmax(preds.logits, axis=1)
         prediction = prediction.numpy()[0]
         lst = ['Bose Bad Audio', 'Bose Good Audio', 'Bose Bad build', 'Bose Good Build', 'Bose Bad Price', 'Bose Good Price', 
